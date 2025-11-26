@@ -9,4 +9,19 @@ pipeline {
             }
         }
     }
+    stages {
+        stage('Build') {
+            steps {
+                sh "mvn clean package"
+            }
+        }
+    }
+stages {
+        stage('Deploy') {
+            steps {
+                sh "cp hello-world-war-1.0.0.war /opt/apache-tomcat-11.0.14/webapps/"
+            }
+        }
+    }
+
 }
