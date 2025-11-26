@@ -8,14 +8,14 @@ pipeline {
                 sh "git clone https://github.com/venkataprabhu-c/hello-world-war/"
             }
         }
-    }
+    
     stages {
         stage('Build') {
             steps {
                 sh "mvn clean package"
             }
         }
-    }
+    
 stages {
         stage('Deploy') {
             steps {
@@ -23,5 +23,6 @@ stages {
             }
         }
     }
-
+    }
+    }
 }
