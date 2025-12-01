@@ -19,10 +19,10 @@ choice(name: 'mcmd1', choices: ['validate', 'compile','package'], description: '
               sshUserPrivateKey(credentialsId: '8b1c5f3b-7314-47ec-8cec-ebf9b5f514d0',
                                 keyFileVariable: 'KEY_FILE',
                                 usernameVariable: 'SSH_USER')
-            ]){
+            ])
                sh "rm -rf hello-world-war"
                sh "git clone https://github.com/venkataprabhu-c/hello-world-war.git"
-           }
+           
              }
                  
         }
