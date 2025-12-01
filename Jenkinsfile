@@ -15,10 +15,10 @@ choice(name: 'mcmd1', choices: ['validate', 'compile','package'], description: '
              withCredentials([
               usernamePassword(credentialsId: '15b0fdb3-ca60-425f-87a8-e3a90a71f883',
                                usernameVariable: 'MY_USERNAME',
-                               passwordVariable: 'MY_PASSWORD')
-             // sshUserPrivateKey(credentialsId: '8b1c5f3b-7314-47ec-8cec-ebf9b5f514d0',
-                         //       keyFileVariable: 'KEY_FILE',
-                              //  usernameVariable: 'SSH_USER')])
+                               passwordVariable: 'MY_PASSWORD'),
+              sshUserPrivateKey(credentialsId: '8b1c5f3b-7314-47ec-8cec-ebf9b5f514d0',
+                             keyFileVariable: 'KEY_FILE',
+                              usernameVariable: 'SSH_USER')])
                  {
                sh "rm -rf hello-world-war"
                sh "git clone https://github.com/venkataprabhu-c/hello-world-war.git"
