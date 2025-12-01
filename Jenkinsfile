@@ -2,7 +2,7 @@ pipeline {
     // agent { label 'java' }
     agent none
     parameters {
-string(name: 'mcmd', defaultValue: 'default', description: 'Maven clean parameter')
+string(name: 'mcmd', defaultValue: 'clean', description: 'Maven clean parameter')
 booleanParam(name: 'SAMPLE_BOOLEAN', defaultValue: true, description: 'A boolean parameter')
 choice(name: 'mcmd1', choices: ['validate', 'compile','package'], description: 'Choose one option')
 }
@@ -19,7 +19,7 @@ choice(name: 'mcmd1', choices: ['validate', 'compile','package'], description: '
         stage('Build') {
             agent { label 'java' }
              steps {
-               sh "mvn $mcmd mcmd1"
+               sh "mvn $mcmd $mcmd1"
            }
         }
         
