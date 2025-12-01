@@ -23,8 +23,7 @@ choice(name: 'mcmd1', choices: ['validate', 'compile','package'], description: '
                sh "rm -rf hello-world-war"
                sh "git clone https://github.com/venkataprabhu-c/hello-world-war.git"
              }
-             }
-                 
+}              
         }
         stage('Build') {
             agent { label 'java' }
